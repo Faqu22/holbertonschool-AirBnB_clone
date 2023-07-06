@@ -2,6 +2,7 @@
 """Base model"""
 import uuid
 import datetime
+from __init__ import storage
 
 
 class BaseModel:
@@ -15,6 +16,8 @@ class BaseModel:
             for key, value in kwargs.items():
                 if not key == "__class__":
                     setattr(self, key, value)
+        else:
+            storage.new(self)
 
     def __str__(self):
         """print"""
@@ -23,6 +26,7 @@ class BaseModel:
     def save(self):
         """Updates the public instance attribute 'updated_at' \
             with the current datetime"""
+        storage.save()
         self.updated_at = datetime.datetime.now()
 
     def to_dict(self):
