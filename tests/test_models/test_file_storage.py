@@ -38,5 +38,17 @@ class TestFileStorage(unittest.TestCase):
         self.assertIn(obj_key, file_data)
         self.assertEqual(file_data[obj_key], obj.to_dict())
 
+    def test_reload_loads_objects_from_file(self):
+        obj = BaseModel()
+        self.storage.new(obj)
+        self.storage.save()
+        self.storage.reload()
+
+        obj_key = f"{obj.__class__.__name__}.{obj.id}"
+        self.assertIn(obj_key, self.storage._FileStorage__objects)
+
+        reloaded_obj = self.storage._FileStorage__objects[obj_key]
+        self.assertEqual(reloaded_obj.__dict__, obj.__dict__)
+
 if __name__ == '__main__':
     unittest.main()
