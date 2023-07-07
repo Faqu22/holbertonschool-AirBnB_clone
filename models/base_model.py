@@ -2,7 +2,7 @@
 """Base model"""
 import uuid
 import datetime
-from models.__init__ import storage
+# from models.__init__ import storage
 
 
 class BaseModel:
@@ -26,7 +26,7 @@ class BaseModel:
     def save(self):
         """Updates the public instance attribute 'updated_at' \
             with the current datetime"""
-        storage.save()
+        # storage.save()
         self.updated_at = datetime.datetime.now()
 
     def to_dict(self):
