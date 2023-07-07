@@ -8,7 +8,7 @@ class FileStorage():
 
     def __init__(self):
         """ initialization """
-        self.__file_path = "./engine/file.json"
+        self.__file_path = "file.json"
         self.__objects = {}
 
     def all(self):
