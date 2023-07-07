@@ -2,7 +2,6 @@
 """ file storage """
 import json
 
-
 class FileStorage():
     """ file storage class """
 
@@ -20,17 +19,23 @@ class FileStorage():
         cname = obj.__class__.__name__
         value = obj.id
         keyname = f"{cname}.{value}"
-        self.__objects[keyname] = obj.to_dict()
+        self.__objects[keyname] = obj
 
     def save(self):
         """ save func """
-        with open(self.__file_path, "w") as o_file:
-            o_file.write(json.dumps(self.__objects))
+        serialized_data = {}
+        for key, value in self.__objects.items():
+            serialized_data[key] = value.to_dict()
+        with open(self.__file_path, 'w') as o_file:
+            json.dump(serialized_data, o_file)
 
     def reload(self):
         """ reload func """
+        from models.base_model import BaseModel
         try:
             with open(self.__file_path, "r", encoding="utf-8") as i_file:
-                self.__objects = json.loads(i_file.read())
+                for key, value in json.load(i_file).items():
+                    value = BaseModel(**value)
+                    self.__objects[key] = value
         except Exception:
             pass
