@@ -5,7 +5,7 @@ import cmd
 from models import storage
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
-
+import re
 
 class HBNBCommand(cmd.Cmd):
     """ cmd hbnb class """
@@ -114,7 +114,7 @@ by adding or updating attribute"""
                 elif len(args) < 4:
                     print("** value missing **")
                 else:
-                    obj[args[2]] = args[3]
+                    obj.__dict__[args[2]] = args[3]
                     storage.save()
             except KeyError:
                 print("** no instance found **")
