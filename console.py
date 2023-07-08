@@ -114,7 +114,7 @@ by adding or updating attribute"""
                 elif len(args) < 4:
                     print("** value missing **")
                 else:
-                    obj.__dict__[args[2]] = args[3]
+                    obj[args[2]] = args[3]
                     storage.save()
             except KeyError:
                 print("** no instance found **")
