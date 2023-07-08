@@ -13,6 +13,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     def emptyline(self):
+        """ Create a empty line"""
         return ""
 
     def do_quit(self, arg):

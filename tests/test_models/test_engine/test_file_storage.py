@@ -50,5 +50,6 @@ class TestFileStorage(unittest.TestCase):
         reloaded_obj = self.storage._FileStorage__objects[obj_key]
         self.assertEqual(reloaded_obj.__dict__, obj.__dict__)
 
+
 if __name__ == '__main__':
     unittest.main()

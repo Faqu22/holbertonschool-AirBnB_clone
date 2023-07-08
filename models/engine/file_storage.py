@@ -2,6 +2,7 @@
 """ file storage """
 import json
 
+
 class FileStorage():
     """ file storage class """
 
