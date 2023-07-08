@@ -97,7 +97,7 @@ based or not on the class name"""
         """Updates an instance based on the class name and id \
 by adding or updating attribute"""
         class_list = ['BaseModel', 'FileStorage']
-        args = arg.split()
+        args = re.findall(r'\"[^\"]+\"|\S+', arg)
         if not arg:
             print("** class name missing **")
         elif args[0] not in class_list:
