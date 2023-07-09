@@ -29,9 +29,9 @@ class FileStorage():
 
     def save(self):
         """ save func """
-        myd = FileStorage.__objects.copy()
-        for key, value in FileStorage.__objects.items():
-            myd[key] = value.to_dict()
+        myd = {}
+        for key in FileStorage.__objects:
+            myd[key] = FileStorage.__objects[key].to_dict()
         with open(FileStorage.__file_path, "w") as o_file:
             o_file.write(json.dumps(myd))
 
@@ -39,7 +39,7 @@ class FileStorage():
         """ reload func """
         try:
             with open(FileStorage.__file_path, "r", encoding="UTF8") as i_file:
-                readed = json.loads(i_file.read())
+                readed = json.load(i_file)
             for key, value in readed.items():
                 objcls = readed[key]['__class__']
                 if objcls in FileStorage.cls.keys():
