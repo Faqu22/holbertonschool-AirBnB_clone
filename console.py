@@ -86,11 +86,11 @@ based or not on the class name"""
             myd = []
             if not arg:
                 for keyname in database:
-                    myd.append(str(database[keyname]))
+                    myd.append(database[keyname])
             else:
                 for keyname in database:
                     if keyname.startswith(arg):
-                        myd.append(str(database[keyname]))
+                        myd.append(database[keyname])
             print(myd)
 
     def do_update(self, arg):
