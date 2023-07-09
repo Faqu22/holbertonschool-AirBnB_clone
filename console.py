@@ -24,6 +24,7 @@ class HBNBCommand(cmd.Cmd):
                   'Amenity', 'Place', 'Review']
 
     def emptyline(self):
+        """does nothing"""
         return None
 
     def do_quit(self, arg):
