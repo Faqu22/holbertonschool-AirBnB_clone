@@ -25,20 +25,24 @@ class FileStorage():
 
     def new(self, obj):
         """ new func """
-        FileStorage.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj.to_dict()
+        FileStorage.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
 
     def save(self):
         """ save func """
-
-
-        with open(self.__file_path, 'w') as o_file:
-            o_file.write(json.dumps(self.__objects))
+        myd = FileStorage.__objects.copy()
+        for key, value in FileStorage.__objects.items():
+            myd[key] = value.to_dict()
+        with open(FileStorage.__file_path, "w") as o_file:
+            o_file.write(json.dumps(myd))
 
     def reload(self):
         """ reload func """
         try:
-            with open(self.__file_path, "r", encoding="UTF8") as i_file:
-                for key, value in json.load(i_file).items():
-                    self.__objects[key] = value
+            with open(FileStorage.__file_path, "r", encoding="UTF8") as i_file:
+                readed = json.loads(i_file.read())
+            for key, value in readed.items():
+                objcls = readed[key]['__class__']
+                if objcls in FileStorage.cls.keys():
+                    FileStorage.__objects[key] = self.cls[objcls](**value)
         except Exception:
             pass
