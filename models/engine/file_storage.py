@@ -26,7 +26,6 @@ class FileStorage():
     def new(self, obj):
         """ new func """
         FileStorage.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
-        FileStorage.save()
 
     def save(self):
         """ save func """
