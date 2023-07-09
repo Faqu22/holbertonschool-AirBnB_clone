@@ -44,5 +44,5 @@ class FileStorage():
                     objcls = readed[key]['__class__']
                     if objcls in FileStorage.cls.keys():
                         FileStorage.__objects[key] = self.cls[objcls](**value)
-        except Exception:
+        except FileNotFoundError:
             pass
