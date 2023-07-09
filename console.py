@@ -53,10 +53,9 @@ name and id"""
         else:
             keyname = f"{args[0]}.{args[1]}"
             database = storage.all()
-            try:
-                if keyname in database:
-                    print(database[keyname])
-            except KeyError:
+            if keyname in database:
+                print(database[keyname])
+            else:
                 print("** no instance found **")
 
     def do_destroy(self, arg):
