@@ -41,8 +41,7 @@ class FileStorage():
             with open(FileStorage.__file_path, "r", encoding="UTF8") as i_file:
                 readed = json.load(i_file) if not None else []
             for key, value in readed.items():
-                objcls = readed[key]['__class__']
-                if objcls in FileStorage.cls.keys():
-                    FileStorage.__objects[key] = self.cls[objcls](**value)
+                FileStorage.__objects[key] = \
+                    globals()[value['__class__']](**value)
         except Exception:
             pass
