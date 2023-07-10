@@ -64,6 +64,9 @@ Examples:
 ### Clone Repository
     git clone https://github.com/Faqu22/holbertonschool-AirBnB_clone.git
 
+### Run Tests
+    python3 -m unittest discover tests
+
 ### Authors
 Facundo Alvarez
 Pablo Laborde
