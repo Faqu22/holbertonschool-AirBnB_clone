@@ -50,6 +50,16 @@ class TestFileStorage(unittest.TestCase):
         reloaded_obj = self.storage._FileStorage__objects[obj_key]
         self.assertEqual(reloaded_obj.__dict__, obj.__dict__)
 
+    def test_path(self):
+        storage = FileStorage()
+        self.assertEqual(storage._FileStorage__file_path, "file.json")
+
+    def test_reload(self):
+        storage = FileStorage()
+        storage.all().clear()
+        storage.reload()
+        self.assertTrue(len(storage.all()) > 0)
+
 
 if __name__ == '__main__':
     unittest.main()
