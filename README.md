@@ -80,6 +80,16 @@ The following data types are used to manage hte objects related to the products.
 ### Run Tests
     python3 -m unittest discover tests
 
+### Resources
+  
+- cmd module
+- packages concept page
+- uuid module
+- datetime
+- unittest module
+- args/kwargs
+- Python test cheatsheet
+
 ### Requirements
 
 #### Python Scripts
