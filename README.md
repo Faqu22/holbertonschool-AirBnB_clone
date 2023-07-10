@@ -12,8 +12,7 @@ For this step of the project it was developed the console and the storage
 Purpose:
 
     - create your data model
-    - manage (create, update, destroy, etc) objects via a console / command
-      interpreter
+    - manage (create, update, destroy, etc) objects via a console / command interpreter
     - store and persist objects to a file (JSON file)
 
 How to use:
