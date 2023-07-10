@@ -61,6 +61,17 @@ Examples:
     to update:
         update <object class> <object id> <key> <value>
 
+### Project Attributes
+
+#### Data types
+    - BaseModel
+    - FileStorage
+    - State
+    - City
+    - Amenity
+    - Place
+    - Review
+
 ### Clone Repository
     git clone https://github.com/Faqu22/holbertonschool-AirBnB_clone.git
 
