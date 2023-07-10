@@ -61,7 +61,7 @@ Examples:
     to update:
         update <object class> <object id> <key> <value>
 
-### clone repo
+### Clone Repository
     git clone https://github.com/Faqu22/holbertonschool-AirBnB_clone.git
 
 ### Authors
