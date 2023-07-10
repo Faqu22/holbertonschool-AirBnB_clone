@@ -1,34 +1,64 @@
-### holbertonschool-AirBnB_clone
+#### holbertonschool-AirBnB_clone
 # Welcome to the AirBnB clone project!
 
-## Project Concept
-    This project consist of making a clone of AirBNB.
+### Project Concept
+This project consist of making a clone of AirBNB.
 
-    For this step of the project it was developed the console and the storage
-    {JSON files}.
+For this step of the project it was developed the console and the storage
+{JSON files}.
 
 
-## Command Interpreter:
-    purpose:
-        - create your data model
-        - manage (create, update, destroy, etc) objects via a console / command
-          interpreter
-        - store and persist objects to a file (JSON file)
+### Command Interpreter:
+Purpose:
+    - create your data model
+    - manage (create, update, destroy, etc) objects via a console / command
+      interpreter
+    - store and persist objects to a file (JSON file)
 
-    how to use:
-        There are two ways of using the commnad interpreter:
-            - Interactive Mode
-            - Non Interactive Mode
+How to use:
+    There are two ways of using the commnad interpreter:
+        - Interactive Mode
+        - Non Interactive Mode
+
+To use it:
+    After cloning the repository run:
 
     Interactive Mode:
-        After cloning the repository run:
         ./console.py
 
     Non Interactive Mode:
+        run the commands as follow:
+            echo "<command>" | ./console.py
 
-    how to use it
-    examples
+Command list:
+    - Create - Creates a new instance
+    - Show - Prints the string representation of an instance
+    - Destroy - Deletes an instance based on the class and id
+    - All - Prints all string represntation of all instances
+    - Update - Updates an instance based on class and id
+    - Help - 
+    - Quit - Exit the console
 
-# clone repo
+Examples:
+    to create:
+        create <object class>
 
-# 
+    to show:
+        show <object class> <object id>
+
+    to destroy:
+        destroy <object class> <object id>
+
+    to all:
+        all                 (prints all the elemnts)
+        all <object class>  (prints all the elemnts of object class)
+
+    to update:
+        update <object class> <object id> <key> <value>
+
+### clone repo
+    git clone https://github.com/Faqu22/holbertonschool-AirBnB_clone.git
+
+### Authors
+Facundo Alvarez
+Pablo Laborde
