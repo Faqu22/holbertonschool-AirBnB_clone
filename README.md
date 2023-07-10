@@ -65,6 +65,7 @@ Examples:
 #### Data types
 
 The following data types are used to manage hte objects related to the products.
+
     - BaseModel
     - FileStorage
     - State
