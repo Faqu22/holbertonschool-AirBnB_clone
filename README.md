@@ -1,14 +1,14 @@
-## holbertonschool-AirBnB_clone
-### Welcome to the AirBnB clone project!
+### holbertonschool-AirBnB_clone
+# Welcome to the AirBnB clone project!
 
-# Project Concept
+## Project Concept
     This project consist of making a clone of AirBNB.
 
     For this step of the project it was developed the console and the storage
     {JSON files}.
 
 
-# Command Interpreter:
+## Command Interpreter:
     purpose:
         - create your data model
         - manage (create, update, destroy, etc) objects via a console / command
@@ -25,7 +25,7 @@
         ./console.py
 
     Non Interactive Mode:
-        
+
     how to use it
     examples
 
