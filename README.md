@@ -68,6 +68,5 @@ Examples:
     python3 -m unittest discover tests
 
 ### Authors
-
-Facundo Alvarez
-Pablo Laborde
+- Facundo Alvarez
+- Pablo Laborde
